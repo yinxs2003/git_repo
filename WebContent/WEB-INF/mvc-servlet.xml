@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+
+	<!-- 组件扫描 -->
+	<context:component-scan base-package="pb.control" />
+	<!-- springMVC绝大部分自动化配置 -->
+	<mvc:annotation-driven />
+
+	<!-- 逻辑视图名转换: 把“视图名”转换成一个JstlView视图对象(自动封装数据，url跳转) -->
+	<!-- "/" + list + ".jsp" 拼接为一个目标跳转地址 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:suffix=".jsp" p:prefix="/WEB-INF/jsp/" />
+</beans>

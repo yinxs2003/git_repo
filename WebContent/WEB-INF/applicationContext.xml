@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 包扫描 -->
+	<context:component-scan base-package="pb" />
+
+	<!-- dataSource -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.SimpleDriverDataSource"
+		p:driverClass="oracle.jdbc.driver.OracleDriver" p:url="jdbc:oracle:thin:@localhost:1521:orcl"
+		p:username="scott" p:password="tiger" />
+
+	<!-- sqlSessionFactoryBean -->
+	<bean id="factoryBean" class="org.mybatis.spring.SqlSessionFactoryBean"
+		p:dataSource-ref="dataSource" p:mapperLocations="classpath:pb/mapper/*Mapper.xml"
+		p:configLocation="classpath:mycfg.xml" />
+
+	<!-- sqlSessionTemplate -->
+	<bean id="template" class="org.mybatis.spring.SqlSessionTemplate"
+		c:sqlSessionFactory-ref="factoryBean" />
+
+	<!-- 事务管理 -->
+	<bean id="tm"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+		p:dataSource-ref="dataSource" />
+
+	<!-- 支持注解事务配置 -->
+	<tx:annotation-driven transaction-manager="tm" />
+</beans>
+
+
+
+
+
+
+
+
