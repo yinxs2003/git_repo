@@ -32,6 +32,21 @@
 		</project.build.sourceEncoding>
 		<spring.version>4.2.3.RELEASE</spring.version>
 	</properties>
+
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<name>Nexus Repository</name>
+			<url>http://172.27.12.66:8081/nexus/content/repositories/test/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<!-- spring start -->
 		<dependency>
@@ -139,5 +154,17 @@
 			<version>1.7.12</version>
 		</dependency>
 
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<!-- 私有仓库的jar -->
+		<dependency>
+			<groupId>fastdfs</groupId>
+			<artifactId>fdfs</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
 </project>
