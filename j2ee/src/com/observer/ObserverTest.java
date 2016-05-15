@@ -1,10 +1,7 @@
-package com.test;
+package com.observer;
 
-/**
- * Created by yinxuesong on 2016/5/11.
- */
 public class ObserverTest {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         ConcretSubject cs = new ConcretSubject();
 
         IObserver io = new IObserver();

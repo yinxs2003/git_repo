@@ -19,6 +19,6 @@ public class StopThread {
         });
         backgroundThread.start();
         TimeUnit.SECONDS.sleep(1);
-        stopRequest =true;
+        stopRequest = true;
     }
 }
