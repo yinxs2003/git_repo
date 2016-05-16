@@ -2,14 +2,11 @@ package com.simpleFactory.cashier;
 
 public class NormalPayment implements Cashier {
 
-    private double result;
-
-    public NormalPayment(double money) {
-        this.result = money;
+    public NormalPayment() {
     }
 
     @Override
     public double acceptPay(double money) {
-        return result;
+        return money;
     }
 }

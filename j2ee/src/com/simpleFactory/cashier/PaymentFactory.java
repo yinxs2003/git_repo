@@ -2,8 +2,8 @@ package com.simpleFactory.cashier;
 
 
 public class PaymentFactory {
-    public static Cashier getNormalPaymentInstance(double price) {
-        return new NormalPayment(price);
+    public static Cashier getNormalPaymentInstance() {
+        return new NormalPayment();
     }
 
     public static Cashier getDiscountPaymentInstance(double discount) {

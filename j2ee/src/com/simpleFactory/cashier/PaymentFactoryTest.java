@@ -2,7 +2,7 @@ package com.simpleFactory.cashier;
 
 public class PaymentFactoryTest {
     public static void main(String[] args) {
-        Cashier normalCashier = PaymentFactory.getNormalPaymentInstance(300);
+        Cashier normalCashier = PaymentFactory.getNormalPaymentInstance();
         System.out.println(normalCashier.acceptPay(300));
 
         Cashier discountCashier = PaymentFactory.getDiscountPaymentInstance(0.8);
