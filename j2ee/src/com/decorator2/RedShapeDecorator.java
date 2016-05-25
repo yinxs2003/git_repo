@@ -1,8 +1,8 @@
 package com.decorator2;
 
-public class RedShapeDecorator extends ShapeDecorator{
+class RedShapeDecorator extends ShapeDecorator {
 
-    public RedShapeDecorator(Shape decoratedShape) {
+    RedShapeDecorator(Shape decoratedShape) {
         super(decoratedShape);
     }
 

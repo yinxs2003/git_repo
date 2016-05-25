@@ -2,9 +2,6 @@ package com.concurrent;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by yinxuesong on 2016/5/11.
- */
 public class StopThread {
     private static volatile boolean stopRequest = false;//volatile保证对多个线程可见
 

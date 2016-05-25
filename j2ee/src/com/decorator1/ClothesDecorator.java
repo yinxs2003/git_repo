@@ -1,8 +1,9 @@
 package com.decorator1;
 
-public abstract class ClothesDecorator implements Clothes{
+abstract class ClothesDecorator implements Clothes {
     protected Clothes decoratedCoat;
-    public ClothesDecorator(Clothes decoratedCoat){
+
+    ClothesDecorator(Clothes decoratedCoat) {
         this.decoratedCoat = decoratedCoat;
     }
 

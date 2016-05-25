@@ -1,5 +1,5 @@
 package com.proxy;
 
-public interface Image {
+interface Image {
     void display();
 }

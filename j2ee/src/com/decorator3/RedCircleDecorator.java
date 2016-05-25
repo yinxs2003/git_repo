@@ -1,6 +1,6 @@
 package com.decorator3;
 
-public class RedCircleDecorator extends ShapeDecorator {
+class RedCircleDecorator extends ShapeDecorator {
     RedCircleDecorator(Shape decoratorShape) {
         super(decoratorShape);
     }

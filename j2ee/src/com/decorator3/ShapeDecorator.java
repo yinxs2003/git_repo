@@ -1,6 +1,6 @@
 package com.decorator3;
 
-public abstract class ShapeDecorator implements Shape{
+abstract class ShapeDecorator implements Shape {
     protected Shape decoratorShape;
     ShapeDecorator(Shape decoratorShape){
         this.decoratorShape = decoratorShape;

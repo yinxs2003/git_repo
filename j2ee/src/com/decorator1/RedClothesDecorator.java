@@ -1,7 +1,7 @@
 package com.decorator1;
 
-public class RedClothesDecorator extends ClothesDecorator {
-    public RedClothesDecorator(Clothes decoratedCoat) {
+class RedClothesDecorator extends ClothesDecorator {
+    RedClothesDecorator(Clothes decoratedCoat) {
         super(decoratedCoat);
     }
     @Override
