@@ -9,9 +9,9 @@
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 </head>
 <body class="blue-style">
-	<c:if test="${sessionScope.user != null}">
-		<c:redirect url="http://localhost:8080/U2WebProject/LoginServlet"/>
-	</c:if>
+	<%--<c:if test="${sessionScope.user != null}">--%>
+		<%--<c:redirect url="http://localhost:8080/U2WebProject/LoginServlet"/>--%>
+	<%--</c:if>--%>
 	<div id="login">
 		<div class="icon"></div>
 		<div class="login-box">

@@ -1,11 +1,12 @@
-package com.entity;
+package com.mvc.entity;
 
 public class User {
     private Integer id;
     private String username;
     private String password;
 
-    public User(){}
+    public User() {
+    }
 
     public User(Integer id, String username, String password) {
         this.id = id;
