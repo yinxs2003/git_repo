@@ -15,15 +15,15 @@
 	<div id="login">
 		<div class="icon"></div>
 		<div class="login-box">
-			<form method="post" action="LoginServlet">
+			<form method="post" action="/user/login">
 				<dl>
 					<dt>用户名：</dt>
 					<dd>
-						<input type="text" name="userName" class="input-text" value="" />
+						<input type="text" name="username" class="input-text" value="" />
 					</dd>
 					<dt>密 码：</dt>
 					<dd>
-						<input type="password" name="passWord" class="input-text" />
+						<input type="password" name="password" class="input-text" />
 					</dd>
 				</dl>
 				<div class="buttons">

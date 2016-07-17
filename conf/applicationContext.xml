@@ -32,12 +32,12 @@
     </bean> -->
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="user" value="${jdbc.user}"></property>
-        <property name="password" value="${jdbc.password}"></property>
-        <property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
-        <property name="driverClass" value="${jdbc.driverClass}"></property>
-        <property name="initialPoolSize" value="${jdbc.initPoolSize}"></property>
-        <property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>
+        <property name="user" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="jdbcUrl" value="${jdbc.jdbcUrl}"/>
+        <property name="driverClass" value="${jdbc.driverClass}"/>
+        <property name="initialPoolSize" value="${jdbc.initPoolSize}"/>
+        <property name="maxPoolSize" value="${jdbc.maxPoolSize}"/>
     </bean>
 
     <!-- sqlSessionFactoryBean -->
@@ -60,6 +60,6 @@
 
     <!-- Directly injecting mappers. The required SqlSessionFactory will be autowired. -->
     <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean" autowire="byType">
-        <property name="mapperInterface" value="com.mvc.mapper.UserMapper" />
+        <property name="mapperInterface" value="com.mvc.mapper.UserMapper"/>
     </bean>
 </beans>

@@ -7,8 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
 <link type="text/css" rel="stylesheet" href="css/style.css" />
-</head>
-<body>
+
+<body></head>
 <div id="header">
 	<div class="title"></div>
 	<div class="welcome">当前用户：${user.userName}</div>
