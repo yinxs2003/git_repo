@@ -1,38 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>系统登录 - 用户信息管理系统</title>
-<link type="text/css" rel="stylesheet" href="css/style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>系统登录 - 用户信息管理系统</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
 </head>
 <body class="blue-style">
-	<%--<c:if test="${sessionScope.user != null}">--%>
-		<%--<c:redirect url="http://localhost:8080/U2WebProject/LoginServlet"/>--%>
-	<%--</c:if>--%>
-	<div id="login">
-		<div class="icon"></div>
-		<div class="login-box">
-			<form method="post" action="/user/login">
-				<dl>
-					<dt>用户名：</dt>
-					<dd>
-						<input type="text" name="username" class="input-text" value="" />
-					</dd>
-					<dt>密 码：</dt>
-					<dd>
-						<input type="password" name="password" class="input-text" />
-					</dd>
-				</dl>
-				<div class="buttons">
-					<input type="submit" name="submit" value="登录系统"
-						class="input-button" /> <input type="reset" name="reset"
-						value="重　　填" class="input-button" />
-				</div>
-			</form>
-		</div>
-	</div>
+<%--<c:if test="${sessionScope.user != null}">--%>
+<%--<c:redirect url="http://localhost:8080/U2WebProject/LoginServlet"/>--%>
+<%--</c:if>--%>
+<div id="login">
+    <div class="icon"></div>
+    <div class="login-box">
+        <%--<form method="post" action="/user/login">
+            <dl>
+                <dt>用户名：</dt>
+                <dd>
+                    <input type="text" name="username" class="input-text" value="" />
+                </dd>
+                <dt>密 码：</dt>
+                <dd>
+                    <input type="password" name="password" class="input-text" />
+                </dd>
+            </dl>
+            <div class="buttons">
+                <input type="submit" name="submit" value="登录系统"
+                    class="input-button" /> <input type="reset" name="reset"
+                    value="重　　填" class="input-button" />
+            </div>
+        </form>--%>
+            
+        <form:form form_id="loginForm" method="post" action="/user/login" modelAttribute="user">
+            <form:label path="username">Enter your user-name</form:label>
+            <form:input id="username" name="username" path="username"/><br>
+            <form:label path="username">Please enter your password</form:label>
+            <form:password id="password" name="password" path="password"/><br>
+            <input type="submit" value="登录系统"/>
+            <input type="reset" name="reset" value="重　　填" class="input-button"/>
+        </form:form>
+    </div>
+</div>
 </body>
 </html>

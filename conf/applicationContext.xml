@@ -46,8 +46,8 @@
           p:configLocation="classpath:mycfg.xml"/>
 
     <!-- sqlSessionTemplate -->
-    <bean id="template" class="org.mybatis.spring.SqlSessionTemplate"
-          c:sqlSessionFactory-ref="factoryBean"/>
+    <!--<bean id="template" class="org.mybatis.spring.SqlSessionTemplate"-->
+          <!--c:sqlSessionFactory-ref="factoryBean"/>-->
 
 
     <!-- 事务管理 -->

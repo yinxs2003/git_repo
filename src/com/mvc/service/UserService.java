@@ -24,4 +24,11 @@ public class UserService {
 		return userMapper.findByUsername(username);
 	}
 
+    public boolean isValidUser(String username, String password) {
+        User aUser = findUserByUsername(username);
+        if(aUser != null && aUser.getPassword().equals(password)){
+            return true;
+        }
+        return false;
+    }
 }
