@@ -35,6 +35,6 @@ public interface UserMapper {
         @Result(property = "password", column = "s_password")
     })
     @Select("SELECT s_id, s_username, s_password from s_user where s_username=#{username}")
-	User findByUsername(String username);
+    User findByUsername(String username);
 
 }

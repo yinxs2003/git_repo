@@ -16,7 +16,7 @@
 <div id="login">
     <div class="icon"></div>
     <div class="login-box">
-        <%--<form method="post" action="/user/login">
+        <form method="post" action="/login">
             <dl>
                 <dt>用户名：</dt>
                 <dd>
@@ -32,16 +32,23 @@
                     class="input-button" /> <input type="reset" name="reset"
                     value="重　　填" class="input-button" />
             </div>
-        </form>--%>
-            
-        <form:form form_id="loginForm" method="post" action="/user/login" modelAttribute="user">
-            <form:label path="username">Enter your user-name</form:label>
-            <form:input id="username" name="username" path="username"/><br>
-            <form:label path="username">Please enter your password</form:label>
-            <form:password id="password" name="password" path="password"/><br>
-            <input type="submit" value="登录系统"/>
-            <input type="reset" name="reset" value="重　　填" class="input-button"/>
-        </form:form>
+        </form>
+            <%--<form:form id="loginForm" method="post" action="login" modelAttribute="loginBean">
+
+                <form:label path="username">Enter your user-name</form:label>
+                <form:input id="username" name="username" path="username" /><br>
+                <form:label path="username">Please enter your password</form:label>
+                <form:password id="password" name="password" path="password" /><br>
+                <input type="submit" value="Submit" />
+            </form:form>--%>
+        <%--<form:form form_id="loginForm" method="post" action="/login" modelAttribute="user">--%>
+            <%--<form:label path="username">Enter your user-name</form:label>--%>
+            <%--<form:input id="username" name="username" path="username"/><br>--%>
+            <%--<form:label path="username">Please enter your password</form:label>--%>
+            <%--<form:password id="password" name="password" path="password"/><br>--%>
+            <%--<input type="submit" value="登录系统"/>--%>
+            <%--<input type="reset" name="reset" value="重　　填" class="input-button"/>--%>
+            <%--</form:form>--%>
     </div>
 </div>
 </body>
