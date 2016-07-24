@@ -2,7 +2,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="
 		http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
@@ -21,16 +21,6 @@
     <!-- 指定connector连接信息的属性文件的位置 -->
     <context:property-placeholder location="classpath:db.properties"/>
 
-    <!-- 倒入c3p0数据源 -->
-    <!-- <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="user" value="${jdbc.user}"></property>
-        <property name="password" value="${jdbc.password}"></property>
-        <property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
-        <property name="driverClass" value="${jdbc.driverClass}"></property>
-        <property name="initialPoolSize" value="${jdbc.initPoolSize}"></property>
-        <property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>
-    </bean> -->
-
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="user" value="${jdbc.user}"/>
         <property name="password" value="${jdbc.password}"/>
@@ -40,14 +30,9 @@
         <property name="maxPoolSize" value="${jdbc.maxPoolSize}"/>
     </bean>
 
-    <!-- sqlSessionFactoryBean -->
     <bean id="factoryBean" class="org.mybatis.spring.SqlSessionFactoryBean"
-          p:dataSource-ref="dataSource" p:mapperLocations="classpath:com/mvc/mapper/*Mapper.xml"
-          p:configLocation="classpath:mycfg.xml"/>
-
-    <!-- sqlSessionTemplate -->
-    <!--<bean id="template" class="org.mybatis.spring.SqlSessionTemplate"-->
-          <!--c:sqlSessionFactory-ref="factoryBean"/>-->
+          p:dataSource-ref="dataSource"
+    />
 
 
     <!-- 事务管理 -->
