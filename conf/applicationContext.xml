@@ -31,8 +31,9 @@
     </bean>
 
     <bean id="factoryBean" class="org.mybatis.spring.SqlSessionFactoryBean"
-          p:dataSource-ref="dataSource"
-    />
+          p:dataSource-ref="dataSource" p:mapperLocations="classpath:com/mvc/mapper/*Mapper.java"
+          p:configLocation="classpath:mycfg.xml"/>
+
 
 
     <!-- 事务管理 -->
