@@ -35,20 +35,23 @@
 		<div class="optitle clearfix">
 			<em><input type="button" name="button" value="添加数据"
 				class="input-button" onclick="location.href='modify.jsp'" /></em>
-			<div class="title">账单管理&gt;&gt;</div>
+			<div class="title">用户管理&gt;&gt;</div>
 		</div>
 		<div class="content">
 			<table class="list">
 				<tr>
-					<td>账单编号</td>
-					<td>商品名称</td>
-					<td>商品数量</td>
-					<td>单位</td>
-					<td>交易金额</td>
-					<td>是否付款</td>
-					<td>供应商名称</td>
-					<td>商品描述</td>
-					<td>操作</td>
+					<td>身份证号</td>
+					<td>姓名</td>
+					<td>姓名拼音</td>
+					<td>性别</td>
+					<td>出生日期</td>
+					<td>政治面貌</td>
+					<td>电话</td>
+					<td>工作</td>
+					<td>籍贯</td>
+					<td>家庭住址</td>
+					<td>工作地址</td>
+					<td>与户主关系</td>
 				</tr>
 				<c:forEach var="bill" items="${billList}">
 					<tr>

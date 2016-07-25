@@ -10,9 +10,9 @@
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
 </head>
 <body class="blue-style">
-<%--<c:if test="${sessionScope.user != null}">--%>
-<%--<c:redirect url="http://localhost:8080/U2WebProject/LoginServlet"/>--%>
-<%--</c:if>--%>
+<%--<c:if test="${sessionScope.loginUser != null}">
+    <c:redirect url="http://localhost:8080/login"/>
+</c:if>--%>
 <div id="login">
     <div class="icon"></div>
     <div class="login-box">
@@ -33,22 +33,6 @@
                     value="重　　填" class="input-button" />
             </div>
         </form>
-            <%--<form:form id="loginForm" method="post" action="login" modelAttribute="loginBean">
-
-                <form:label path="username">Enter your user-name</form:label>
-                <form:input id="username" name="username" path="username" /><br>
-                <form:label path="username">Please enter your password</form:label>
-                <form:password id="password" name="password" path="password" /><br>
-                <input type="submit" value="Submit" />
-            </form:form>--%>
-        <%--<form:form form_id="loginForm" method="post" action="/login" modelAttribute="user">--%>
-            <%--<form:label path="username">Enter your user-name</form:label>--%>
-            <%--<form:input id="username" name="username" path="username"/><br>--%>
-            <%--<form:label path="username">Please enter your password</form:label>--%>
-            <%--<form:password id="password" name="password" path="password"/><br>--%>
-            <%--<input type="submit" value="登录系统"/>--%>
-            <%--<input type="reset" name="reset" value="重　　填" class="input-button"/>--%>
-            <%--</form:form>--%>
     </div>
 </div>
 </body>

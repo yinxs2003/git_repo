@@ -11,7 +11,7 @@
 <body></head>
 <div id="header">
 	<div class="title"></div>
-	<div class="welcome">当前用户：${user.userName}</div>
+	<div class="welcome">当前用户：${loginUser.username}</div>
 </div>
 </body>
 </html>

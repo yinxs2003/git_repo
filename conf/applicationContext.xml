@@ -62,4 +62,8 @@
     <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean" autowire="byType">
         <property name="mapperInterface" value="com.mvc.mapper.UserMapper"/>
     </bean>
+
+    <bean id="personMapper" class="org.mybatis.spring.mapper.MapperFactoryBean" autowire="byType">
+        <property name="mapperInterface" value="com.mvc.mapper.PersonMapper"/>
+    </bean>
 </beans>
