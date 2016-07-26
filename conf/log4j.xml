@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+					 debug="true">
+	<!-- 输出日志到控制台 -->
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<!-- 信息输出格式 -->
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{dd/MM/yy hh:mm:ss:sss z}] %5p %c{2}: %m%n" />
+		</layout>
+	</appender>
+	<!-- 输出日志到文件 -->
+	<appender name="FILE" class="org.apache.log4j.RollingFileAppender">
+		<!-- 文件路径 -->
+		<param name="file" value="system.log" />
+		<param name="append" value="true" />
+		<!-- 文件大小 -->
+		<param name="maxFileSize" value="1MB" />
+		<!-- 文件备份数量 -->
+		<param name="maxBackupIndex" value="1000" />
+		<!-- 信息输出格式 -->
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %C{6} (%F:%L) - %m%n" />
+		</layout>
+	</appender>
+	<loggers>
+		<logger name="log4jdbc.log4j2" level="info" additivity="false">
+			<MarkerFilter marker="LOG4JDBC_SELECT" onMatch="DENY"
+						  onMismatch="NEUTRAL" />
+			<MarkerFilter marker="LOG4JDBC_UPDATE" onMatch="DENY"
+						  onMismatch="NEUTRAL" />
+			<MarkerFilter marker="LOG4JDBC_INSERT" onMatch="DENY"
+						  onMismatch="NEUTRAL" />
+			<MarkerFilter marker="LOG4JDBC_DELETE" onMatch="DENY"
+						  onMismatch="NEUTRAL" />
+			<MarkerFilter marker="LOG4JDBC_CREATE" onMatch="DENY"
+						  onMismatch="NEUTRAL" />
+			<appender-ref ref="CONSOLE" />
+		</logger>
+
+		<root>
+			<appender-ref ref="CONSOLE" />
+			<appender-ref ref="FILE" />
+		</root>
+	</loggers>
+</log4j:configuration>
