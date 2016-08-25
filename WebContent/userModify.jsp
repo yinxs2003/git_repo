@@ -57,7 +57,7 @@
 			<div class="buttons">
 				<input type="submit" name="submit" value="确认" class="input-button" />
 				<input type="button" name="button" value="返回" class="input-button"
-					onclick="window.parent.window.location.href='userIndex.jsp'" />
+					onclick="window.parent.window.location.href='user_index.jsp'" />
 			</div>
 		</form>
 	</div>

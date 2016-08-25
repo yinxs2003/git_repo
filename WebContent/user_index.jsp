@@ -16,7 +16,7 @@
 	<frameset cols="200,*" frameborder="no" border="0" framespacing="0">
 		<frame src="admin_left.jsp" name="leftFrame" scrolling="no"
 			noresize="noresize" id="leftFrame" />
-		<frame src="userAdmin.jsp" name="mainFrame" id="mainFrame" />
+		<frame src="user_admin.jsp" name="mainFrame" id="mainFrame" />
 	</frameset>
 </frameset>
 <noframes>

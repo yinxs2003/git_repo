@@ -1,3 +1,3 @@
-insert into s_user values(
-  1,'admin','admin123'
+insert into s_user(s_username,s_password) values(
+  'admin','admin123'
 );

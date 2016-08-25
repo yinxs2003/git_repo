@@ -10,28 +10,15 @@
 </head>
 <body class="frame-bd">
 <ul class="left-menu">
-    <li><a href="QueryAdminServlet" target="mainFrame"><img
-            src="images/btn_bill.gif"/></a></li>
-    <li><a href="QueryProviderServlet" target="mainFrame"><img
-            src="images/btn_suppliers.gif"/></a></li>
-    <li><a href="user/findAll" target="mainFrame"><img
-            src="images/btn_users.gif"/></a></li>
+    <li><a href="${pageContext.request.contextPath}/personManagement" target="mainFrame"><img
+            src="${pageContext.request.contextPath}/images/btn_bill.gif"/></a></li>
+    <%--<li><a href="QueryProviderServlet" target="mainFrame"><img
+            src="images/btn_suppliers.gif"/></a></li>--%>
+    <li><a href="${pageContext.request.contextPath}/userManagement" target="mainFrame"><img
+            src="${pageContext.request.contextPath}/images/btn_users.gif"/></a></li>
     <!-- <li><a href="#" onclick="javascript:logout()"><img src="images/btn_exit.gif" /></a></li> -->
     <li><a href="LogOut" onclick=""><img
-            src="images/btn_exit.gif"/></a></li>
+            src="${pageContext.request.contextPath}/images/btn_exit.gif"/></a></li>
 </ul>
-<script type="text/javascript">
-    function logout() {
-        console.log("logout()");
-        //parent.location.reload();
-
-    }
-
-    function logout2() {
-        console.log("logout2()");
-        //parent.location.reload();
-
-    }
-</script>
 </body>
 </html>

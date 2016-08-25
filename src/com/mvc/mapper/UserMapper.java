@@ -30,11 +30,18 @@ public interface UserMapper {
     int addUser(User user);
 
     @Results({
-        @Result(property = "id", column = "s_id"),
-        @Result(property = "username", column = "s_username"),
-        @Result(property = "password", column = "s_password")
+            @Result(property = "id", column = "s_id"),
+            @Result(property = "username", column = "s_username"),
+            @Result(property = "password", column = "s_password")
     })
     @Select("SELECT s_id, s_username, s_password from s_user where s_username=#{username}")
     User findByUsername(String username);
 
+    @Results({
+            @Result(property = "id", column = "s_id"),
+            @Result(property = "username", column = "s_username"),
+            @Result(property = "password", column = "s_password")
+    })
+    @Select("select s_id, s_username, s_password from s_user where s_id=#{id}")
+    User findByUserId(String id);
 }

@@ -20,7 +20,11 @@ public class UserService {
         return userMapper.addUser(user);
     }
 
-	public User findUserByUsername(String username) {
-		return userMapper.findByUsername(username);
-	}
+    public User findUserByUsername(String username) {
+        return userMapper.findByUsername(username);
+    }
+
+    public User findUserById(String id) {
+        return userMapper.findByUserId(id);
+    }
 }

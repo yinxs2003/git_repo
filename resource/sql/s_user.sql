@@ -5,7 +5,7 @@ create table s_user(
     s_password varchar(50)
 );
 select * from s_user;
-
+-- delete from s_user where s_id =2;
 -- drop TABLE person
 create table s_person(
     p_id int primary key auto_increment,
