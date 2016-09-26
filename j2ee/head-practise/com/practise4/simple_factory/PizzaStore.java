@@ -1,0 +1,21 @@
+package com.practise4.simple_factory;
+
+import com.practise4.entity.Pizza;
+
+/**
+ * 工厂
+ */
+public abstract class PizzaStore {
+    public Pizza orderPizza(String type) {
+        Pizza pizza;
+
+        pizza = createPizza(type);
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
+        return pizza;
+    }
+
+    abstract Pizza createPizza(String type);
+}
