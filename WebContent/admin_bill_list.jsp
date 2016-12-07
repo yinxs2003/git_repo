@@ -12,6 +12,7 @@
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+======= personList : ${requestScope.personList} =======
 	<div class="menu">
 		<form method="post" action="QueryAdminServlet">
 			商品名称：<input type="text" name="productName" class="input-text"
@@ -43,6 +44,7 @@
 					<td>身份证号</td>
 					<td>姓名</td>
 					<td>姓名拼音</td>
+					<td>曾用名</td>
 					<td>性别</td>
 					<td>出生日期</td>
 					<td>政治面貌</td>
@@ -53,22 +55,27 @@
 					<td>工作地址</td>
 					<td>与户主关系</td>
 				</tr>
-				<c:forEach var="bill" items="${billList}">
+				<%--<c:forEach var="person" items="${personList}">
 					<tr>
-						<td><c:out value="${bill.billId}"></c:out></td>
-						<td><c:out value="${bill.commodityName}"></c:out></td>
-						<td><c:out value="${bill.commodityQuantity}"></c:out></td>
-						<td><c:out value="${bill.commodityUnit}"></c:out></td>
-						<td><c:out value="${bill.sumPrice}"></c:out></td>
-						<td><c:out value="${bill.havePay}"></c:out></td>
-						<td><c:out value="${bill.providerId}"></c:out></td>
-						<td><c:out value="${bill.commodityDesc}"></c:out></td>
+						<td><c:out value="${person.cardId}"></c:out></td>
+						<td><c:out value="${person.name}"></c:out></td>
+						<td><c:out value="${person.pinyin}"></c:out></td>
+						<td><c:out value="${person.usedName}"></c:out></td>
+						<td><c:out value="${person.sex}"></c:out></td>
+						<td><c:out value="${person.birth}"></c:out></td>
+						<td><c:out value="${person.politicalStatus}"></c:out></td>
+						<td><c:out value="${person.phone}"></c:out></td>
+						<td><c:out value="${person.job}"></c:out></td>
+						<td><c:out value="${person.hometown}"></c:out></td>
+						<td><c:out value="${person.homeAddress}"></c:out></td>
+						<td><c:out value="${person.officeAddress}"></c:out></td>
+						<td><c:out value="${person.relationWithHost}"></c:out></td>
 						<td><a
-							href='ProviderInitServlet?billId=${bill.billId}&commodityName=${bill.commodityName}&commodityQuantity=${bill.commodityQuantity}&commodityUnit=${bill.commodityUnit}&sumPrice=${bill.sumPrice}&havePay=${bill.havePay}&providerId=${bill.providerId}&commodityDesc=${bill.commodityDesc}
+							href='ProviderInitServlet?billId=${person.billId}&commodityName=${person.commodityName}&commodityQuantity=${person.commodityQuantity}&commodityUnit=${person.commodityUnit}&sumPrice=${person.sumPrice}&havePay=${person.havePay}&providerId=${person.providerId}&commodityDesc=${person.commodityDesc}
 							'>修改</a>
-							<a href='DeleteAdminServlet?billId=${bill.billId}'>删除</a></td>
+							<a href='DeleteAdminServlet?billId=${person.billId}'>删除</a></td>
 					</tr>
-				</c:forEach>
+				</c:forEach>--%>
 			</table>
 		</div>
 	</div>

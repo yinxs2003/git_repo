@@ -50,20 +50,20 @@
 					<td>商品描述</td>
 					<td>操作</td>
 				</tr>
-				<c:forEach var="bill" items="${billList}">
+				<c:forEach var="person" items="${billList}">
 					<tr>
-						<td><c:out value="${bill.billId}"></c:out></td>
-						<td><c:out value="${bill.commodityName}"></c:out></td>
-						<td><c:out value="${bill.commodityQuantity}"></c:out></td>
-						<td><c:out value="${bill.commodityUnit}"></c:out></td>
-						<td><c:out value="${bill.sumPrice}"></c:out></td>
-						<td><c:out value="${bill.havePay}"></c:out></td>
-						<td><c:out value="${bill.providerId}"></c:out></td>
-						<td><c:out value="${bill.commodityDesc}"></c:out></td>
+						<td><c:out value="${person.billId}"></c:out></td>
+						<td><c:out value="${person.commodityName}"></c:out></td>
+						<td><c:out value="${person.commodityQuantity}"></c:out></td>
+						<td><c:out value="${person.commodityUnit}"></c:out></td>
+						<td><c:out value="${person.sumPrice}"></c:out></td>
+						<td><c:out value="${person.havePay}"></c:out></td>
+						<td><c:out value="${person.providerId}"></c:out></td>
+						<td><c:out value="${person.commodityDesc}"></c:out></td>
 						<td><a
-							href='ProviderInitServlet?billId=${bill.billId}&commodityName=${bill.commodityName}&commodityQuantity=${bill.commodityQuantity}&commodityUnit=${bill.commodityUnit}&sumPrice=${bill.sumPrice}&havePay=${bill.havePay}&providerId=${bill.providerId}&commodityDesc=${bill.commodityDesc}
+							href='ProviderInitServlet?billId=${person.billId}&commodityName=${person.commodityName}&commodityQuantity=${person.commodityQuantity}&commodityUnit=${person.commodityUnit}&sumPrice=${person.sumPrice}&havePay=${person.havePay}&providerId=${person.providerId}&commodityDesc=${person.commodityDesc}
 							'>修改</a>
-							<a href='DeleteAdminServlet?billId=${bill.billId}'>删除</a></td>
+							<a href='DeleteAdminServlet?billId=${person.billId}'>删除</a></td>
 					</tr>
 				</c:forEach>
 			</table>

@@ -23,3 +23,8 @@ create table s_person(
     p_office_address varchar(50),
     p_relation_with_host varchar(50)
 );
+
+select * from s_person;
+
+insert into s_person(p_card_id, p_name, p_name_pinyin, p_used_name, p_sex, p_birth, p_political_status, p_phone, p_job, p_hometown, p_home_address, p_office_address, p_relation_with_host)
+VALUE ('1233214','dsadsad','dsadsad','dsadsa','man','1991-12-11','321321','dsjalkd','djsalidjsalid','djilsajdsadij','dsadqt','dsadasd','daskdjla');

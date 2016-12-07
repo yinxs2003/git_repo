@@ -7,7 +7,7 @@ public class Person {
     private String cardId;
     private String name;
     private String pinyin;
-    private String userdName;
+    private String usedName;
     private String sex;
     private Date birth;
     private String politicalStatus;
@@ -18,11 +18,11 @@ public class Person {
     private String officeAddress;//工作地址
     private String relationWithHost;//与户主关系
 
-    public Person(String cardId, String name, String pinyin, String userdName, String sex, Date birth, String politicalStatus, String phone, String job, String hometown, String homeAddress, String officeAddress, String relationWithHost) {
+    public Person(String cardId, String name, String pinyin, String usedName, String sex, Date birth, String politicalStatus, String phone, String job, String hometown, String homeAddress, String officeAddress, String relationWithHost) {
         this.cardId = cardId;
         this.name = name;
         this.pinyin = pinyin;
-        this.userdName = userdName;
+        this.usedName = usedName;
         this.sex = sex;
         this.birth = birth;
         this.politicalStatus = politicalStatus;
@@ -32,6 +32,14 @@ public class Person {
         this.homeAddress = homeAddress;
         this.officeAddress = officeAddress;
         this.relationWithHost = relationWithHost;
+    }
+
+    public String getUsedName() {
+        return usedName;
+    }
+
+    public void setUsedName(String usedName) {
+        this.usedName = usedName;
     }
 
     public String getCardId() {

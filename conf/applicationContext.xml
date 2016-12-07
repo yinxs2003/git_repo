@@ -34,8 +34,6 @@
           p:dataSource-ref="dataSource" p:mapperLocations="classpath:com/mvc/mapper/*Mapper.java"
           p:configLocation="classpath:mycfg.xml"/>
 
-
-
     <!-- 事务管理 -->
     <bean id="transactionManager"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
@@ -45,11 +43,13 @@
     <tx:annotation-driven/>
 
     <!-- Directly injecting mappers. The required SqlSessionFactory will be autowired. -->
-    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean" autowire="byType">
+    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface" value="com.mvc.mapper.UserMapper"/>
+        <property name="sqlSessionFactory" ref="factoryBean"/>
     </bean>
 
-    <bean id="personMapper" class="org.mybatis.spring.mapper.MapperFactoryBean" autowire="byType">
+    <bean id="personMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface" value="com.mvc.mapper.PersonMapper"/>
+        <property name="sqlSessionFactory" ref="factoryBean"/>
     </bean>
 </beans>
