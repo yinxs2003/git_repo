@@ -7,5 +7,5 @@ import com.mvc.entity.Customer;
 public interface CustomerService {
 	List<Customer> getAll();
 
-	Customer getCustomerByName(String name);
+	Customer getCustomerByName(String username);
 }

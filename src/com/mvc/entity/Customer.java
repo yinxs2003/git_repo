@@ -9,39 +9,46 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "customer")
-//@AccessType("field")
 public class Customer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private Integer Id;
-	@Column
-	private String name;
-	@Column
-	private String pass;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer Id;
+    @Column(name = "username")
+    private String username;
+    @Column(name = "password")
+    private String password;
 
-	public String getPass() {
-		return pass;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setPass(String pass) {
-		this.pass = pass;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public Integer getId() {
-		return Id;
-	}
+    public Integer getId() {
+        return Id;
+    }
 
-	public void setId(Integer id) {
-		Id = id;
-	}
+    public void setId(Integer id) {
+        Id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "Id=" + Id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

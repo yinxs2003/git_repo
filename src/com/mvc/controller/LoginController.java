@@ -17,39 +17,42 @@ import com.mvc.service.CustomerService;
 @Controller("loginController")
 public class LoginController {
 
-	public static HttpSession getSession() {
-		HttpSession session = null;
-		try {
-			session = getRequest().getSession();
-		} catch (Exception e) {
-		}
-		return session;
-	}
+    public static HttpSession getSession() {
+        HttpSession session = null;
+        try {
+            session = getRequest().getSession();
+        } catch (Exception e) {
+        }
+        return session;
+    }
 
-	public static HttpServletRequest getRequest() {
-		ServletRequestAttributes attrs = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-		return attrs.getRequest();
-	}
+    public static HttpServletRequest getRequest() {
+        ServletRequestAttributes attrs = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        return attrs.getRequest();
+    }
 
-	@Autowired
-	private CustomerService customerService;
+    @Autowired
+    private CustomerService customerService;
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(@RequestParam("name") String name, @RequestParam("pass") String pass) {
-		System.out.println(this.getClass() + " " + "访问login");
-		Customer loginUser = customerService.getCustomerByName(name);
-		if (loginUser != null && loginUser.getPass().equals(pass)) {
-			getSession().setAttribute("loginUser", loginUser);
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(@RequestParam("username") String name, @RequestParam("password") String pass) {
+        System.out.println(this.getClass() + " " + "访问login");
+        Customer loginUser = customerService.getCustomerByName(name);
+        if (loginUser != null && loginUser.getPassword().equals(pass)) {
+            getSession().setAttribute("loginUser", loginUser);
 
-			return "index";
-		}
+            return "index";
+        }
 
-		return "error";
-	}
+        return "error";
+    }
 
-	@RequestMapping("/login")
-	public String login() {
-		System.out.println("跳转到index页面");
-		return "index";
-	}
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String login(@RequestParam("username") String username) {
+        System.out.println("跳转到index页面");
+        Customer c = customerService.getCustomerByName(username);
+        getRequest().setAttribute("loginUser",c);
+        System.out.println(c);
+        return "index";
+    }
 }

@@ -22,9 +22,11 @@ public class CustomerDaoImpl implements CustomerDao {
 
 	@Transactional
 	@Override
-	public Customer getCustomerByName(String name) {
-		System.out.println(this.getClass() + " getCustomerByName");
-		String queryString = "from Customer where name=?";
-		return (Customer) sessionFactory.getCurrentSession().createQuery(queryString).setString(0, name).uniqueResult();
+	public Customer getCustomerByName(String username) {
+		String queryString = "from Customer where username=?";
+//		Customer c = (Customer) sessionFactory.getCurrentSession().createQuery(queryString).setString(0, username).uniqueResult();
+		Customer c = (Customer) sessionFactory.getCurrentSession().get(Customer.class, 1);
+		System.out.println("select :" + c);
+		return c;
 	}
 }

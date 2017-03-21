@@ -7,8 +7,8 @@
 </head>
 <body>
 	<h1>登录成功！</h1>
-	name:${loginUser.name }
+	username:${loginUser.username }
 	<br>
-	pass:${loginUser.pass }
+	password:${loginUser.password }
 </body>
 </html>

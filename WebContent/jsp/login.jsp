@@ -17,8 +17,8 @@
 <body>
 	<%=basePath%>login
 	<form action="<%=basePath%>login">
-		username: <input type="text" name="name"> <br> password:
-		<input type="text" name="pass"> <br> <input type="submit" />
+		username: <input type="text" username="username"> <br> password:
+		<input type="text" username="password"> <br> <input type="submit" />
 	</form>
 </body>
 </html>
