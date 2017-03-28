@@ -53,8 +53,10 @@
         <property name="initialPoolSize" value="${jdbc.initPoolSize}"/>
         <property name="maxPoolSize" value="${jdbc.maxPoolSize}"/>
         <property name="preferredTestQuery" value="${jdbc.preferredTestQuery}"/>
-        <property name="idleConnectionTestPeriod" value="${jdbc.idleConnectionTestPeriod}"/>
-        <property name="testConnectionOnCheckout" value="${jdbc.testConnectionOnCheckout}"/>
-
+        <!-- 异步的不会有效率问题 -->
+        <property name="testConnectionOnCheckin" value="${jdbc.testConnectionOnCheckin}"/>
+        <!--30s 检测连接有效性，官方文档建议这样设置-->
+        <property name="idleConnectionTestPeriod" value="80"/>
+        
     </bean>
 </beans>
