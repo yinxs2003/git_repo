@@ -30,10 +30,10 @@
 		<property name="initialPoolSize" value="${jdbc.initPoolSize}"></property>
 		<property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>
 	</bean>
-
+<!--classpath*:com/huaxin/**/*Mapper.xml-->
 	<!-- sqlSessionFactoryBean -->
 	<bean id="factoryBean" class="org.mybatis.spring.SqlSessionFactoryBean"
-		p:dataSource-ref="dataSource" p:mapperLocations="classpath:com/mvc/mapper/*Mapper.xml"
+		p:dataSource-ref="dataSource" p:mapperLocations="classpath*:com/mvc/mapper/*Mapper.xml"
 		p:configLocation="classpath:mycfg.xml" />
 
 	<!-- sqlSessionTemplate -->
