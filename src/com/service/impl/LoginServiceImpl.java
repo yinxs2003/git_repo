@@ -1,17 +1,18 @@
 package com.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.beans.Employee;
-import com.dao.EmployeeDao;
+import com.dao.impl.EmployeeDaoImpl;
 import com.service.LoginService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 @Service("loginService")
 public class LoginServiceImpl implements LoginService {
 
 	@Autowired
-	private EmployeeDao employeeDao;
+	@Qualifier("employeeDao")
+	private EmployeeDaoImpl employeeDao;
 
 	@Override
 	public boolean login(Employee employee) {

@@ -1,7 +1,10 @@
 package com.beans;
 
+import org.springframework.stereotype.Component;
+
 import java.io.Serializable;
 
+@Component
 public class Department implements Serializable{
 	private static final long serialVersionUID = 7018566590922251885L;
 	private Integer id;

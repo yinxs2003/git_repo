@@ -92,7 +92,7 @@ input.login-sub {
 <body onload="check()">
 	<div class="login-top"></div>
 	<div class="login-area">
-		<form action="login" method="post">
+		<form action="loginAction.action" method="post">
 			<label> 工&nbsp;&nbsp;号： </label>
 			<input type="text" name="employee.sn" />
 			<label> 密&nbsp;&nbsp;码： </label>
@@ -102,7 +102,7 @@ input.login-sub {
 			<!-- 	<input type="image" src="random.action"
 				onclick="changeValidateCode(this)" title="点击图片刷新验证码" /> -->
 			<input type="submit" class="login-sub" value="" />
-			<s:actionerror cssStyle="margin-top: 10px;" />
+			<%--<s:actionerror cssStyle="margin-top: 10px;" />--%>
 			<input type="hidden" id="msg" value="${requestScope.msg }" />
 		</form>
 	</div>

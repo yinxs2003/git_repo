@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-1-30 12:30:10 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="com.beans.Employee" table="SYS_EMPLOYEE">
+		<id name="sn" type="java.lang.String">
+			<column name="SN" />
+			<generator class="assigned" />
+		</id>
+		<many-to-one name="postion" class="com.beans.Postion"
+			fetch="join">
+			<column name="POSTION_ID" />
+		</many-to-one>
+		<many-to-one name="department" class="com.beans.Department"
+			fetch="join">
+			<column name="DEPARTMENT_ID" />
+		</many-to-one>
+		<property name="name" type="java.lang.String">
+			<column name="NAME" />
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="PASSWORD" />
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="STATUS" />
+		</property>
+	</class>
+</hibernate-mapping>

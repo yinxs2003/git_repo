@@ -1,26 +1,28 @@
 package com.action;
 
-import java.util.Map;
-
+import com.beans.Employee;
+import com.opensymphony.xwork2.Action;
+import com.opensymphony.xwork2.ActionContext;
+import com.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.beans.Employee;
-import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionContext;
-import com.service.EmployeeService;
+import java.util.Map;
 
 @Controller
 @Scope("prototype")
 public class LoginAction {// 这个类用来验证登录信息
-	@Autowired
-	@Qualifier("employee")
 	private Employee employee;// struts自动获取employees
 
+	private final EmployeeService employeeService;
+
 	@Autowired
-	private EmployeeService employeeService;
+	public LoginAction(EmployeeService employeeService, @Qualifier("employee") Employee employee) {
+		this.employeeService = employeeService;
+		this.employee = employee;
+	}
 
 	public String login() {
 		String sn = employee.getSn();
